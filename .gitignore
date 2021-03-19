@@ -1,0 +1,8 @@
+**/classes/
+**/dist/
+**/bin/
+**/target/
+**/.settings/
+**/.mvn/
+**/node_modules/
+**/.env
