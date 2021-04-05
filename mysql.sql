@@ -7,6 +7,8 @@ my.ini file in mysql home:
 
   [mysql]
   local_infile=1
+Data directory initialization
+  bin\mysqld --initialize-insecure --console
 ##############################################################
 start mysql server
   mysqld --local_infile=1
