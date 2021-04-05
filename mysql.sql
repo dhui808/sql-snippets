@@ -9,16 +9,23 @@ my.ini file in mysql home:
   local_infile=1
 Data directory initialization
   bin\mysqld --initialize-insecure --console
-##############################################################
 start mysql server
   mysqld --local_infile=1
+Securing the Initial MySQL Account
+  mysql -u root
+  ALTER USER 'root'@'localhost' IDENTIFIED BY 'root-password';
+  CREATE DATABASE mydbname;
+  exit;
+import mysql database
+  mysql -u root -p -h localhost mydbname < mysql.sql
+################################################################
 log in to mysql server and use a specific schema (databse)
   mysql -u root -p --local-infile financial_products
   
 export database
-  mysqldump -u root -p financial_products > mysql.sql
+  mysqldump -u root -p mydbname > mysql.sql
 import mysql database
-  mysql -u root -p -h localhost financial_products < mysql.sql
+  mysql -u root -p -h localhost mydbname < mysql.sql
 
 LOAD DATA LOCAL INFILE  
 '/usr/myData.csv'
